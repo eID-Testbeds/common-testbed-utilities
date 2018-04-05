@@ -13,15 +13,15 @@ import org.bouncycastle.cert.X509CertificateHolder;
 import org.bouncycastle.cert.jcajce.JcaX509CertificateHolder;
 import org.bouncycastle.crypto.agreement.DHStandardGroups;
 import org.bouncycastle.crypto.params.DHParameters;
-import org.bouncycastle.crypto.tls.Certificate;
-import org.bouncycastle.crypto.tls.CipherSuite;
-import org.bouncycastle.crypto.tls.ECPointFormat;
-import org.bouncycastle.crypto.tls.HashAlgorithm;
-import org.bouncycastle.crypto.tls.KeyExchangeAlgorithm;
-import org.bouncycastle.crypto.tls.NamedCurve;
-import org.bouncycastle.crypto.tls.ProtocolVersion;
-import org.bouncycastle.crypto.tls.SignatureAlgorithm;
-import org.bouncycastle.crypto.tls.SignatureAndHashAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.Certificate;
+import com.secunet.bouncycastle.crypto.tls.CipherSuite;
+import com.secunet.bouncycastle.crypto.tls.ECPointFormat;
+import com.secunet.bouncycastle.crypto.tls.HashAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.KeyExchangeAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.NamedCurve;
+import com.secunet.bouncycastle.crypto.tls.ProtocolVersion;
+import com.secunet.bouncycastle.crypto.tls.SignatureAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.SignatureAndHashAlgorithm;
 
 public class BouncyCastleTlsHelper {
     

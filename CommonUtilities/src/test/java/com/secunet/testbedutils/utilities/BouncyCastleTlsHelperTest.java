@@ -9,10 +9,10 @@ import static org.testng.Assert.assertNotNull;
 import java.util.LinkedList;
 
 import org.bouncycastle.crypto.agreement.DHStandardGroups;
-import org.bouncycastle.crypto.tls.HashAlgorithm;
-import org.bouncycastle.crypto.tls.ProtocolVersion;
-import org.bouncycastle.crypto.tls.SignatureAlgorithm;
-import org.bouncycastle.crypto.tls.SignatureAndHashAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.HashAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.ProtocolVersion;
+import com.secunet.bouncycastle.crypto.tls.SignatureAlgorithm;
+import com.secunet.bouncycastle.crypto.tls.SignatureAndHashAlgorithm;
 import org.testng.annotations.Test;
 
 public class BouncyCastleTlsHelperTest {
