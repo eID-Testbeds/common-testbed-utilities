@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<xs:schema xmlns="http://www.secunet.com" targetNamespace="http://www.secunet.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns="https://www.bsi.bund.de" targetNamespace="https://www.bsi.bund.de" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 
 	<!-- types for the XML doc -->
-	<xs:simpleType name="algorithmType">
+	<xs:simpleType name="algorithmtype">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="TA_RSA_v1_5_SHA_1" />
 			<xs:enumeration value="TA_RSA_v1_5_SHA_256" />
@@ -23,7 +23,7 @@
 		</xs:simpleContent>	
 	</xs:complexType>
 	
-	<xs:complexType name="signKeyType">
+	<xs:complexType name="signKeyTyp">
 		<xs:simpleContent>
 			<xs:extension base="xs:string" />
 		</xs:simpleContent>	
@@ -31,7 +31,7 @@
 
 	<xs:complexType name="certHolderAuthType">
 		<xs:sequence>
-			<xs:element name="role" type="roleType" />
+			<xs:element name="role" type="roletype" />
 			<xs:element name="writeDG17" type="xs:boolean" minOccurs="0" maxOccurs="1" />
 			<xs:element name="writeDG18" type="xs:boolean" minOccurs="0" maxOccurs="1" />
 			<xs:element name="writeDG19" type="xs:boolean" minOccurs="0" maxOccurs="1" />
@@ -71,11 +71,11 @@
 			<xs:element name="generateQualifiedElectronicSignature" type="xs:boolean" minOccurs="0" maxOccurs="1" />
 			<xs:element name="generateElectronicSignature" type="xs:boolean" minOccurs="0" maxOccurs="1" />
 		</xs:sequence>
-		<xs:attribute name="type" type="terminalType" use="required" />
+		<xs:attribute name="type" type="typetype" use="required" />
 		<xs:attribute name="forceOID" type="xs:hexBinary" use="optional" />
 	</xs:complexType>
 
-	<xs:simpleType name="roleType">
+	<xs:simpleType name="roletype">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CVCA" />
 			<xs:enumeration value="DV_DOMESTIC" />
@@ -84,7 +84,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="terminalType">
+	<xs:simpleType name="typetype">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="AT" />
 			<xs:enumeration value="IS" />
@@ -92,25 +92,25 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="profileIdType">
+	<xs:simpleType name="profileidtype">
 		<xs:restriction base="xs:integer">
 			<xs:pattern value="[0-9]{1}" />
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:complexType name="keyType">
+	<xs:complexType name="keytype">
 		<xs:sequence>
 			<xs:element name="filePrivateKey" type="xs:string" />
 			<xs:element name="filePublicKey" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:sequence>
-				<xs:element name="algorithm" type="algorithmType" />
+				<xs:element name="algorithm" type="algorithmtype" />
 				<xs:choice>
-					<xs:element name ="ecdsa" type="ecdsaType" />
+					<xs:element name ="ecdsa" type="ecdsatyp" />
 					<xs:element name="rsa">
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="publicExpo" type="xs:integer" minOccurs="0"/>
-								<xs:element name="length" type="keyLengthType" />
+								<xs:element name="length" type="keylength" />
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
@@ -118,40 +118,34 @@
 			</xs:sequence>
 		</xs:sequence>
 		<xs:attribute name="name" type="xs:string" use="required" />
-		<xs:attribute name="create" type="xs:boolean" /> <!-- default: false -->
 	</xs:complexType>
 	
-	<xs:complexType name="descriptionType">
+	<xs:complexType name="descriptiontype">
 		<xs:sequence>
 			<xs:element name="issuerName" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="issuerURL" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="subjectName" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="subjectURL" type="xs:string" minOccurs="0" maxOccurs="1" />
-			<xs:choice>
-				<xs:element name="fileTermsOfUsage" type="xs:string" minOccurs="0" maxOccurs="1" />
-				<xs:element name="termsOfUsage" type="xs:string" minOccurs="0" maxOccurs="1" />
-			</xs:choice>
+			<xs:element name="termsOfUsage" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="redirectURL" type="xs:string" minOccurs="0" maxOccurs="1" />
 			<xs:element name="commCerts" minOccurs="0" maxOccurs="1">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="fileCommCert" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 						<xs:element name="hashCommCert" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="fileDescription" type="xs:string" minOccurs="0" maxOccurs="1" />
 		</xs:sequence>
-		<xs:attribute name="import" type="xs:boolean" /> <!-- default: false -->
 	</xs:complexType>
 	
-	<xs:complexType name="terminalSectorType">
+	<xs:complexType name="terminalsectortype">
 		<xs:sequence>
-			<xs:element name="fileSectorPublicKey" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element name="fileSectorPublicKey" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:simpleType name="ecdsaType">
+	<xs:simpleType name="ecdsatyp">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ASN1::secp112r1" />
 			<xs:enumeration value="ASN1::secp112r2" />
@@ -185,7 +179,7 @@
 		</xs:restriction>	
 	</xs:simpleType>
 	
-	<xs:simpleType name="keyLengthType">
+	<xs:simpleType name="keylength">
 		<xs:restriction base="xs:integer">
 			<xs:enumeration value="512" />
 			<xs:enumeration value="1024" />
@@ -193,6 +187,7 @@
 			<xs:enumeration value="1536" />
 			<xs:enumeration value="2048" />
 			<xs:enumeration value="3072" />
+			<xs:enumeration value="4096" />
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -203,47 +198,49 @@
 				<xs:element name="keys" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="key" type="keyType" minOccurs="0" maxOccurs="unbounded" />
+							<xs:element name="key" type="keytype" minOccurs="0" maxOccurs="unbounded" />
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="cert" type="certType" maxOccurs="unbounded" />			</xs:sequence>
+				<xs:element name="cert" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="profileId" type="profileidtype" />
+							<xs:element name="certAuthRef" type="xs:string" />
+							<xs:element name="publicKey" type="publicKeyType" maxOccurs="1" />
+							<xs:element name="certHolderRef" type="xs:string" />
+							<xs:element name="certHolderAuth" type="certHolderAuthType" maxOccurs="1" minOccurs="0" />
+							<xs:choice>
+								<xs:element name="effDate" type="xs:date" />
+								<xs:element name="effDateOffset" type="xs:integer" /><!-- refers to date set in application -->
+							</xs:choice>	
+							<xs:choice>
+								<xs:element name="expDate" type="xs:date" />
+								<xs:element name="expDateOffset" type="xs:integer" /><!-- refers to effDate -->
+							</xs:choice>
+							<xs:element name="extensions" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="description" type="descriptiontype" minOccurs="0" maxOccurs="1" />
+										<xs:element name="terminalSector" type="terminalsectortype" minOccurs="0" maxOccurs="2" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="signKey" type="signKeyTyp" maxOccurs="1" />
+							<xs:element name="outputFile" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="createAdditionalHexFile" type="xs:boolean" /> <!-- default: false -->
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
-	<xs:complexType name="certType">
-		<xs:sequence>
-			<xs:element name="profileId" type="profileIdType" />
-			<xs:element name="certAuthRef" type="xs:string" />
-			<xs:element name="publicKey" type="publicKeyType" maxOccurs="1" />
-			<xs:element name="certHolderRef" type="xs:string" />
-			<xs:element name="certHolderAuth" type="certHolderAuthType" minOccurs="0" maxOccurs="1" />
-			<xs:choice>
-				<xs:element name="effDate" type="xs:date" />
-				<xs:element name="effDateOffset" type="xs:integer" />
-			</xs:choice>
-			<xs:choice>
-				<xs:element name="expDate" type="xs:date" />
-				<xs:element name="expDateOffset" type="xs:integer" />
-			</xs:choice>
-			<xs:element name="extensions" minOccurs="0" maxOccurs="1">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="description" type="descriptionType" minOccurs="0" maxOccurs="1" />
-						<xs:element name="terminalSector" type="terminalSectorType" minOccurs="0" maxOccurs="2" />
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="signKey" type="signKeyType" maxOccurs="1" />
-			<xs:element minOccurs="0" maxOccurs="1" name="outputFile">
-				<xs:complexType>
-					<xs:simpleContent>
-						<xs:extension base="xs:string">
-							<xs:attribute name="createAdditionalHexFile" type="xs:boolean" />
-						</xs:extension>
-					</xs:simpleContent>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
+	
 </xs:schema>

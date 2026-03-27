@@ -409,6 +409,14 @@ public class CVCertificate {
 		return m_outerAuthRef;
 	}
 	/**
+	 * This function returns the outer signature
+	 *
+	 * @return returns the outer signature
+	 */
+	public DataBuffer getOuterSignature(){
+		return m_outerSign;
+	}
+	/**
 	 *
 	 * @param newVal
 	 */

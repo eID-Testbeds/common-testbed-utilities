@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<p:certificateDefinitions xmlns:p="http://www.secunet.com"
+<p:certificateDefinitions xmlns:p="https://www.bsi.bund.de"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.secunet.com ../tls_schema.xsd ">
+	xsi:schemaLocation="https://www.bsi.bund.de ../tls_schema.xsd ">
 	<p:certificateDefinition>									<!-- CA certificate -->
 		<p:name>SAMPLE_CERTIFICATE_1</p:name>
 		<p:keyAlgorithm>
 			<p:ECDSA>sect283k1</p:ECDSA>
 		</p:keyAlgorithm>
 		<p:issuer>
-			<p:organization>secunet AG</p:organization>
-			<p:organizationalUnit>Homeland Security</p:organizationalUnit>
+			<p:organization>bund</p:organization>
+			<p:organizationalUnit>bsi</p:organizationalUnit>
 			<p:country>DE</p:country>
-			<p:commonName>secunet CA</p:commonName>
+			<p:commonName>BSI CA</p:commonName>
 		</p:issuer>
 		<p:subject>
-			<p:organization>secunet AG</p:organization>
-			<p:organizationalUnit>Homeland Security</p:organizationalUnit>
+			<p:organization>bund</p:organization>
+			<p:organizationalUnit>bsi</p:organizationalUnit>
 			<p:country>DE</p:country>
 			<p:commonName>Testbed</p:commonName>
 		</p:subject>
@@ -33,7 +33,7 @@
 				<p:serverAuth>true</p:serverAuth>
 			</p:extendedKeyUsage>
 			<p:subjectAltName>
-				<p:GeneralName type="dNSName">ausweisapp-idp-test.secunet.de</p:GeneralName>
+				<p:GeneralName type="dNSName">ausweisapp-idp-test.bsi.bund.de</p:GeneralName>
 			</p:subjectAltName>
 		</p:extensions>
 	</p:certificateDefinition>
@@ -47,14 +47,14 @@
 			<p:ECDSA>SHA512withECDSA</p:ECDSA>
 		</p:signatureAlgorithm>
 		<p:issuer>
-			<p:organization>secunet AG</p:organization>
-			<p:organizationalUnit>Homeland Security</p:organizationalUnit>
+			<p:organization>bund</p:organization>
+			<p:organizationalUnit>bsi</p:organizationalUnit>
 			<p:country>DE</p:country>
-			<p:commonName>secunet CA</p:commonName>
+			<p:commonName>BSI CA</p:commonName>
 		</p:issuer>
 		<p:subject>
-			<p:organization>secunet AG</p:organization>
-			<p:organizationalUnit>Homeland Security</p:organizationalUnit>
+			<p:organization>bund</p:organization>
+			<p:organizationalUnit>bsi</p:organizationalUnit>
 			<p:country>DE</p:country>
 			<p:commonName>Testbed</p:commonName>
 		</p:subject>

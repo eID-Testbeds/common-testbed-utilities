@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<root xmlns="http://www.secunet.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.secunet.com cvcert.xsd">
+<root xmlns="https://www.bsi.bund.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.bsi.bund.de cvcert.xsd">
 
 	<keys>
 		<key name="DETESTCVCASN01_KEY" create="true">
@@ -161,9 +161,9 @@
 		<expDateOffset>0</expDateOffset>
 		<extensions>
 			<description>
-				<issuerName>secunet</issuerName>
+				<issuerName>BSI</issuerName>
 				<subjectName>Test-Diensteanbieter</subjectName>
-				<subjectURL>https://ausweisapp-idp-test.secunet.de</subjectURL>
+				<subjectURL>https://ausweisapp-idp-test.bsi.bund.de</subjectURL>
 				<!-- <fileTermsOfUsage>./desc/ATSN01.txt</fileTermsOfUsage> -->
 				<termsOfUsage>Testbeschreibung ...</termsOfUsage>
 				<commCerts>
